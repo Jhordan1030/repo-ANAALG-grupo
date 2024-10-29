@@ -86,4 +86,11 @@ public class Ejercicio3 {
         }
         return posiciones;
     }
+    
+    public static void main(String[] args) { 
+        // Código del ejercicio 1 
+        System.out.println("Ejecutando Ejercicio 1"); 
+        // Tu código aquí 
+    }
+    
 }
