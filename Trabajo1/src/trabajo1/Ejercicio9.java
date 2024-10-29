@@ -119,6 +119,8 @@ public class Ejercicio9 {
 
     // Método principal para ejecutar el programa
     public static void main(String[] args) {
+        // Código del ejercicio 9 
+        System.out.println("\nEjecutando Ejercicio 9\n"); 
         Scanner scanner = new Scanner(System.in);
         int filas = solicitarEntero(scanner, "Ingrese el número de filas (m): ");
         int columnas = solicitarEntero(scanner, "Ingrese el número de columnas (n): ");

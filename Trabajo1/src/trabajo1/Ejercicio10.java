@@ -67,6 +67,8 @@ public class Ejercicio10 {
     }
 
     public static void main(String[] args) {
+        // Código del ejercicio 10 
+        System.out.println("\nEjecutando Ejercicio 10\n"); 
         Scanner scanner = new Scanner(System.in);
 
         int numEstudiantes = solicitarEntero(scanner, "Ingrese el número de estudiantes: ");
