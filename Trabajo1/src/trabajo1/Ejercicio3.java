@@ -17,7 +17,7 @@ public class Ejercicio3 {
 
     // Método para generar números aleatorios
     private void generarNumerosAleatorios() {
-        for (int num = 0; num < arreglo.length; i++) {
+        for (int num = 0; num < arreglo.length; num++) {
             arreglo[num] = (int) (Math.random() * 101); // Números entre 0 y 100
         }
         // Guardar el arreglo original antes de ordenar para la búsqueda binaria
