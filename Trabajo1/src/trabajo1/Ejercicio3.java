@@ -17,8 +17,8 @@ public class Ejercicio3 {
 
     // Método para generar números aleatorios
     private void generarNumerosAleatorios() {
-        for (int i = 0; i < arreglo.length; i++) {
-            arreglo[i] = (int) (Math.random() * 101); // Números entre 0 y 100
+        for (int num = 0; num < arreglo.length; i++) {
+            arreglo[num] = (int) (Math.random() * 101); // Números entre 0 y 100
         }
         // Guardar el arreglo original antes de ordenar para la búsqueda binaria
         System.arraycopy(arreglo, 0, arregloOriginal, 0, arreglo.length);
@@ -45,9 +45,9 @@ public class Ejercicio3 {
     // Búsqueda secuencial de un elemento, retorna una lista de posiciones donde se encuentra
     public ArrayList<Integer> busquedaSecuencial(int elemento) {
         ArrayList<Integer> posiciones = new ArrayList<>();
-        for (int i = 0; i < arregloOriginal.length; i++) {
-            if (arregloOriginal[i] == elemento) {
-                posiciones.add(i);
+        for (int num = 0; num < arregloOriginal.length; num++) {
+            if (arregloOriginal[num] == elemento) {
+                posiciones.add(num);
             }
         }
         return posiciones;
@@ -66,16 +66,16 @@ public class Ejercicio3 {
                 posiciones.add(medio);
 
                 // Buscar a la izquierda y derecha de la posición encontrada
-                int i = medio - 1;
-                while (i >= 0 && arreglo[i] == elemento) {
-                    posiciones.add(i);
-                    i--;
+                int col = medio - 1;
+                while (col >= 0 && arreglo[col] == elemento) {
+                    posiciones.add(col);
+                    col--;
                 }
 
-                int j = medio + 1;
-                while (j < arreglo.length && arreglo[j] == elemento) {
-                    posiciones.add(j);
-                    j++;
+                int fila = medio + 1;
+                while (fila < arreglo.length && arreglo[fila] == elemento) {
+                    posiciones.add(fila);
+                    fila++;
                 }
                 break;
             } else if (arreglo[medio] < elemento) {
