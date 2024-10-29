@@ -7,14 +7,10 @@ public class Trabajo1 {
     private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        boolean exit = false;
+        displayMenu();
+        int option = getOption();
 
-        while (!exit) {
-            displayMenu();
-            int option = getOption();
-
-            exit = handleOption(option);
-        }
+        handleOption(option);
 
         scanner.close();
         System.out.println("Programa terminado.");
@@ -22,7 +18,7 @@ public class Trabajo1 {
 
     private static void displayMenu() {
         System.out.println("\n=========================");
-        System.out.println("    Menú de Ejercicios    ");
+        System.out.println("    Elija un ejercicio:    ");
         System.out.println("=========================");
         System.out.println("1. Ejercicio 1");
         System.out.println("2. Ejercicio 2");
@@ -49,7 +45,7 @@ public class Trabajo1 {
         }
     }
 
-    private static boolean handleOption(int option) {
+    private static void handleOption(int option) {
         switch (option) {
             case 1:
                 Ejercicio1.main(null);
@@ -82,10 +78,10 @@ public class Trabajo1 {
                 Ejercicio10.main(null);
                 break;
             case 0:
-                return true;
+                System.out.println("Saliendo del programa.");
+                break;
             default:
                 System.out.println("Opción no válida. Intenta de nuevo.");
         }
-        return false;
     }
 }
