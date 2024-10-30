@@ -96,15 +96,20 @@ public class Ejercicio7 {
         return resultado.toString();
     }
     
+    // Método para solicitar un número entero al usuario
+    private static int solicitarEntero(Scanner scanner, String mensaje) {
+        System.out.print(mensaje);
+        return scanner.nextInt();
+    }
+    
     public static void main(String[] args) { 
         // Código del ejercicio 7
-//        System.out.println("\nEjecutando Ejercicio 9\n"); 
-//        Scanner scanner = new Scanner(System.in);
-//        int filas = solicitarEntero(scanner, "Ingrese el número de filas (m): ");
-//        int columnas = solicitarEntero(scanner, "Ingrese el número de columnas (n): ");
-//        Ejercicio7 matriz = new Ejercicio7(5);
-//        matriz.multiplicarMatrices();
-//        System.out.println(matriz.imprimirMatrices());
+        System.out.println("\nEjecutando Ejercicio 7\n"); 
+        Scanner scanner = new Scanner(System.in);
+        int tamaño = solicitarEntero(scanner, "Ingrese el tamaño de la matriz cuadrática (n): ");
+        Ejercicio7 matriz = new Ejercicio7(tamaño);
+        matriz.multiplicarMatrices();
+        System.out.println(matriz.imprimirMatrices());
         
     }
     

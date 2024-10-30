@@ -87,14 +87,23 @@ public class Ejercicio8 {
         return resultado;
     }
     
+    // Método para solicitar un número entero al usuario
+    private static int solicitarEntero(Scanner scanner, String mensaje) {
+        System.out.print(mensaje);
+        return scanner.nextInt();
+    }
+    
     public static void main(String[] args) { 
         // Código del ejercicio 8 
         int determinante = 0;
-        System.out.println("Ejecutando Ejercicio 8"); 
-        Ejercicio8 matriz = new Ejercicio8(4);
+        System.out.println("\nEjecutando Ejercicio 9\n"); 
+        Scanner scanner = new Scanner(System.in);
+        int tamaño = solicitarEntero(scanner, "Ingrese el tamaño de la matriz cuadrática (n): ");
+        Ejercicio8 matriz = new Ejercicio8(tamaño);
         System.out.println(matriz.imprimirMatriz());
         determinante = matriz.calcularDeterminante();
-        System.out.println("El valor del valor determinante de la matriz es: " + determinante);
-    }
+        System.out.println("El valor del determinante de la matriz es: " + determinante);
     
+        
+    }
 }
