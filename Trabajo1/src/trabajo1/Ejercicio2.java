@@ -18,9 +18,9 @@ public class Ejercicio2 {
 
     // Generar números aleatorios y guardarlos en los arreglos de la clase
     private void generarNumerosAleatorios() {
-        for (int i = 0; i < numeros.length; i++) {
-            numeros[i] = (int) (Math.random() * 101);  // Genera números entre 0 y 100
-            numeros2[i] = (int) (Math.random() * 101); // Genera números entre 0 y 100 para el segundo arreglo
+        for (int num = 0; num < numeros.length; num++) {
+            numeros[num] = (int) (Math.random() * 101);  // Genera números entre 0 y 100
+            numeros2[num] = (int) (Math.random() * 101); // Genera números entre 0 y 100 para el segundo arreglo
         }
     }
 
