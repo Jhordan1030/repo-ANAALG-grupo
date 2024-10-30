@@ -21,18 +21,18 @@ public class Ejercicio9 {
     // Método para llenar la matriz con números aleatorios
     private void llenarMatriz() {
         Random random = new Random();
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-                matriz[i][j] = random.nextInt(99) + 1; // Números entre 1 y 99
+        for (int contadorFilas = 0; contadorFilas < filas; contadorFilas++) {
+            for (int contadorColumnas = 0; contadorColumnas < columnas; contadorColumnas++) {
+                matriz[contadorFilas][contadorColumnas] = random.nextInt(99) + 1; // Números entre 1 y 99
             }
         }
     }
 
     // Método para imprimir la matriz
     public void imprimirMatriz() {
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-                System.out.print(matriz[i][j] + " ");
+        for (int contadorFilas = 0; contadorFilas < filas; contadorFilas++) {
+            for (int contadorColumnas = 0; contadorColumnas < columnas; contadorColumnas++) {
+                System.out.print(matriz[contadorFilas][contadorColumnas] + " ");
             }
             System.out.println();
         }
@@ -41,24 +41,24 @@ public class Ejercicio9 {
 
     // Método para ordenar las columnas de la matriz
     public void ordenarColumnas() {
-        for (int j = 0; j < columnas; j++) {
-            ordenarPorSeleccion(j);
+        for (int contadorColumnas = 0; contadorColumnas < columnas; contadorColumnas++) {
+            ordenarPorSeleccion(contadorColumnas);
         }
     }
 
     // Método de ordenamiento por selección
-    private void ordenarPorSeleccion(int col) {
-        for (int i = 0; i < filas - 1; i++) {
-            int minIndex = i;
-            for (int j = i + 1; j < filas; j++) {
-                if (matriz[j][col] < matriz[minIndex][col]) {
-                    minIndex = j;
+    private void ordenarPorSeleccion(int columna) {
+        for (int contadorFilas = 0; contadorFilas < filas - 1; contadorFilas++) {
+            int minimoIndex = contadorFilas;
+            for (int contador = contadorFilas + 1; contador < filas; contador++) {
+                if (matriz[contador][columna] < matriz[minimoIndex][columna]) {
+                    minimoIndex = contador;
                 }
             }
             // Swap
-            int temp = matriz[minIndex][col];
-            matriz[minIndex][col] = matriz[i][col];
-            matriz[i][col] = temp;
+            int valorTemporal = matriz[minimoIndex][columna];
+            matriz[minimoIndex][columna] = matriz[contadorFilas][columna];
+            matriz[contadorFilas][columna] = valorTemporal;
         }
     }
 
@@ -70,14 +70,14 @@ public class Ejercicio9 {
 
     // Método para realizar mediciones de tiempo
     private static void realizarMediciones(int filas, int columnas, int numMediciones, long[] tiemposSeleccion, long[] tiemposTotales) {
-        for (int i = 0; i < numMediciones; i++) {
+        for (int contadorMediciones = 0; contadorMediciones < numMediciones; contadorMediciones++) {
             Ejercicio9 matriz = new Ejercicio9(filas, columnas);
-            System.out.println("Matriz generada " + (i + 1) + ":");
+            System.out.println("Matriz generada " + (contadorMediciones + 1) + ":");
             matriz.imprimirMatriz();
 
             long startTimeTotal = System.nanoTime();
-            medirOrdenamientoSeleccion(matriz, tiemposSeleccion, i);
-            tiemposTotales[i] = System.nanoTime() - startTimeTotal;
+            medirOrdenamientoSeleccion(matriz, tiemposSeleccion, contadorMediciones);
+            tiemposTotales[contadorMediciones] = System.nanoTime() - startTimeTotal;
         }
     }
 

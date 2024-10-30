@@ -8,26 +8,26 @@ public class Ejercicio10 {
 
     public Ejercicio10(int numEstudiantes, int numNotas) {
         estudiantes = new Estudiantes[numEstudiantes];
-        for (int i = 0; i < numEstudiantes; i++) {
-            estudiantes[i] = new Estudiantes("Estudiante " + (i + 1), numNotas);
-            llenarNotas(estudiantes[i]);
-            estudiantes[i].calcularPromedio();
-            estudiantes[i].determinarEstado();
+        for (int contador = 0; contador < numEstudiantes; contador++) {
+            estudiantes[contador] = new Estudiantes("Estudiante " + (contador + 1), numNotas);
+            llenarNotas(estudiantes[contador]);
+            estudiantes[contador].calcularPromedio();
+            estudiantes[contador].determinarEstado();
         }
     }
 
     private void llenarNotas(Estudiantes estudiante) {
         Random rand = new Random();
-        for (int i = 0; i < estudiante.getNotas().length; i++) {
-            estudiante.setNota(i, 1 + rand.nextDouble() * 9); // Notas entre 1 y 10
+        for (int contador = 0; contador < estudiante.getNotas().length; contador++) {
+            estudiante.setNota(contador, 1 + rand.nextDouble() * 9); // Notas entre 1 y 10
         }
     }
 
     public void imprimirEstudiantes() {
         // Imprimir encabezados dinámicamente
         System.out.printf("%-15s", "Estudiante");
-        for (int i = 0; i < estudiantes[0].getNotas().length; i++) {
-            System.out.printf("%-10s", "Nota " + (i + 1));
+        for (int contador = 0; contador < estudiantes[0].getNotas().length; contador++) {
+            System.out.printf("%-10s", "Nota " + (contador + 1));
         }
         System.out.printf("%-10s %-15s%n", "Promedio", "Estado");
 
