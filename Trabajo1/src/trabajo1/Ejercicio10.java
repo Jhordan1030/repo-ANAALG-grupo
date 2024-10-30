@@ -3,7 +3,6 @@ package trabajo1;
 import java.util.Random;
 import java.util.Scanner;
 
-
 public class Ejercicio10 {
     private Estudiantes[] estudiantes;
 

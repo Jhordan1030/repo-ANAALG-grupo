@@ -4,7 +4,6 @@ package trabajo1;
 import java.util.Random;
 import java.util.Scanner;
 
-
 public class Ejercicio9 {
     private int[][] matriz;
     private int filas;
