@@ -65,11 +65,14 @@ public class Ejercicio7 {
     }
 
     private void multiplicarMatrices() { // Realiza la multiplicacion de las dos matrices para generar la tercera matriz
+        int valor=0;
         for (int filas = 0; filas < n; filas++) {
             for (int columnas = 0; columnas < n; columnas++) {
                 for (int variableAuxiliar = 0; variableAuxiliar < n; variableAuxiliar++) {
-                    matrizC[filas][columnas] += matrizA[filas][variableAuxiliar] * matrizB[variableAuxiliar][columnas];
+                    valor += matrizA[filas][variableAuxiliar] * matrizB[variableAuxiliar][columnas];
                 }
+                matrizC[filas][columnas]=valor;
+                valor=0;
             }
         }
     }
@@ -91,7 +94,7 @@ public class Ejercicio7 {
         resultado.append(imprimirMatriz(matrizA));
         resultado.append("\nLa matriz B\n");
         resultado.append(imprimirMatriz(matrizB));
-        resultado.append("\nMatriz C -  Resultante de la multiplicacion\n");
+        resultado.append("\nMatriz C ->  Resultante de la multiplicacion\n");
         resultado.append(imprimirMatriz(matrizC));
         return resultado.toString();
     }
