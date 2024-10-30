@@ -19,12 +19,47 @@ public class Ejercicio7 {
         multiplicarMatrices();
     }
 
+    public int[][] getMatrizA() {
+        return matrizA;
+    }
+
+    public void setMatrizA(int[][] matrizA) {
+        this.matrizA = matrizA;
+    }
+
+    public int[][] getMatrizB() {
+        return matrizB;
+    }
+
+    public void setMatrizB(int[][] matrizB) {
+        this.matrizB = matrizB;
+    }
+
+    public int[][] getMatrizC() {
+        return matrizC;
+    }
+
+    public void setMatrizC(int[][] matrizC) {
+        this.matrizC = matrizC;
+    }
+
+    public int getN() {
+        return n;
+    }
+
+    public void setN(int n) {
+        this.n = n;
+    }
+    
+    
+
     private void generarMatriz(int[][] matriz) { // Genera la matriz con numeros aleatorios
         Random random = new Random();
         for (int filas = 0; filas < n; filas++) {
             for (int columnas = 0; columnas < n; columnas++) {
                 matriz[filas][columnas] = random.nextInt(20) + 1;
             }
+            System.out.println();
         }
     }
 
@@ -51,16 +86,22 @@ public class Ejercicio7 {
     
     public String imprimirMatrices() {
         StringBuilder resultado = new StringBuilder();
+        resultado.append("\nLa matriz A\n");
         resultado.append(imprimirMatriz(matrizA));
+        resultado.append("\nLa matriz B\n");
         resultado.append(imprimirMatriz(matrizB));
+        resultado.append("\nMatriz C -  Resultante de la multiplicacion\n");
         resultado.append(imprimirMatriz(matrizC));
         return resultado.toString();
     }
     
     public static void main(String[] args) { 
-        // Código del ejercicio 1 
-        System.out.println("Ejecutando Ejercicio 1"); 
-        // Tu código aquí 
+        // Código del ejercicio 7
+        System.out.println("Ejecutando Ejercicio 7"); 
+        Ejercicio7 matriz = new Ejercicio7(5);
+        matriz.multiplicarMatrices();
+        System.out.println(matriz.imprimirMatrices());
+        
     }
     
 }

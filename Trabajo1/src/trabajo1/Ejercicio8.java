@@ -34,7 +34,7 @@ public class Ejercicio8 {
         this.n = n;
     }
 
-    public int calcularDeterminante() {
+    public int calcularDeterminante() { 
         int[][] matrizCopia = new int[n][n];
         for (int fila = 0; fila < n; fila++) {
             for (int columna = 0; columna < n; columna++) {
@@ -42,7 +42,7 @@ public class Ejercicio8 {
             }
         }
         int determinante = 1;
-        // Procesar cada columna para realizar la eliminación de Gauss
+        // Procesar cada columna para realizar la eliminación del metodo Gauss
         for (int columnaPivote = 0; columnaPivote < n; columnaPivote++) {
             int filaMaxima = columnaPivote;
             // Encontrar la fila con el valor absoluto máximo en la columna actual (pivote)
@@ -86,9 +86,13 @@ public class Ejercicio8 {
     }
     
     public static void main(String[] args) { 
-        // Código del ejercicio 1 
-        System.out.println("Ejecutando Ejercicio 1"); 
-        // Tu código aquí 
+        // Código del ejercicio 8 
+        int determinante = 0;
+        System.out.println("Ejecutando Ejercicio 8"); 
+        Ejercicio8 matriz = new Ejercicio8(4);
+        System.out.println(matriz.imprimirMatriz());
+        determinante = matriz.calcularDeterminante();
+        System.out.println("El valor del valor determinante de la matriz es: " + determinante);
     }
     
 }
