@@ -110,7 +110,7 @@ public class Ejercicio7 {
         System.out.println("\nEjecutando Ejercicio 7\n"); 
         Scanner scanner = new Scanner(System.in);
         int tamaño = solicitarEntero(scanner, "Ingrese el tamaño de la matriz cuadrática (n): ");        
-        long tiemposSeleccion=0;
+        
         long tiemposTotales=0;
         Ejercicio7 matriz = new Ejercicio7(tamaño);
         matriz.multiplicarMatrices();

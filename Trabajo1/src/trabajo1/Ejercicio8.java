@@ -99,7 +99,7 @@ public class Ejercicio8 {
         System.out.println("\nEjecutando Ejercicio 9\n"); 
         Scanner scanner = new Scanner(System.in);
         int tamaño = solicitarEntero(scanner, "Ingrese el tamaño de la matriz cuadrática (n): ");        
-        long tiemposSeleccion=0;
+        
         long tiemposTotales=0;
         Ejercicio8 matriz = new Ejercicio8(tamaño);
         System.out.println(matriz.imprimirMatriz());
