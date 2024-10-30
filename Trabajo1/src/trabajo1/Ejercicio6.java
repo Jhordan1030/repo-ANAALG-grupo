@@ -88,6 +88,10 @@ public class Ejercicio6 {
          
        Ejercicio6 matrizEspiral = new Ejercicio6(n,m); 
         medirTiempoEjecucion(() -> matrizEspiral.mostrarMatriz());
+        
+        scannern.close();
+        
+        scannerm.close();
     }
 
     /**
@@ -101,7 +105,7 @@ public class Ejercicio6 {
         
         long tiempoFin = System.nanoTime();
         long duracionNanosegundos = tiempoFin - tiempoInicio;
-        System.out.println("Tiempo de ejecución: " + duracionNanosegundos + " ns");
+        System.out.println("Tiempo de ejecución: " + duracionNanosegundos + " nanosegundos");
     }
     }
     

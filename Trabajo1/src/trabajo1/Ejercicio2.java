@@ -82,7 +82,8 @@ public class Ejercicio2 {
         System.out.println("Elementos de numeros2 que están en numeros: " + numeros.elementosEnNumeros());
         long tiempoFin = System.nanoTime();
         long tiempoEjecucion = tiempoFin - tiempoInicio;
-        System.out.println("Tiempo de ejecución: " + tiempoEjecucion + " ns");
+        System.out.println("Tiempo de ejecución: " + tiempoEjecucion + " nanosegundos");
+        entrada.close();
 
     }
     

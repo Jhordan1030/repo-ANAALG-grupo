@@ -101,8 +101,11 @@ public class Ejercicio5 {
                 Ejercicio5 matrizDiagonal = new Ejercicio5(n);
                 matrizDiagonal.generarDiagonales();
                 matrizDiagonal.mostrarMatriz();
+                
+                scanner.close();
             }
         });
+        
     }
 
     /**
@@ -117,7 +120,7 @@ public class Ejercicio5 {
         long tiempoFin = System.nanoTime();
         long duracionNanosegundos = tiempoFin - tiempoInicio;
         
-        System.out.println("Tiempo de ejecución: " + duracionNanosegundos + " ns");
+        System.out.println("Tiempo de ejecución: " + duracionNanosegundos + " nanosegundos");
     }
     }
     

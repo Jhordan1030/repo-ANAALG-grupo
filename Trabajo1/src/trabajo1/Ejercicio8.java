@@ -98,12 +98,17 @@ public class Ejercicio8 {
         int determinante = 0;
         System.out.println("\nEjecutando Ejercicio 9\n"); 
         Scanner scanner = new Scanner(System.in);
-        int tamaño = solicitarEntero(scanner, "Ingrese el tamaño de la matriz cuadrática (n): ");
+        int tamaño = solicitarEntero(scanner, "Ingrese el tamaño de la matriz cuadrática (n): ");        
+        long tiemposSeleccion=0;
+        long tiemposTotales=0;
         Ejercicio8 matriz = new Ejercicio8(tamaño);
         System.out.println(matriz.imprimirMatriz());
         determinante = matriz.calcularDeterminante();
         System.out.println("El valor del determinante de la matriz es: " + determinante);
-    
+        long startTimeTotal = System.nanoTime();
+        tiemposTotales = System.nanoTime() - startTimeTotal;
+        System.out.println("Tiempo ejecución= "+tiemposTotales+" nanosegundos");
         
+        scanner.close();
     }
 }

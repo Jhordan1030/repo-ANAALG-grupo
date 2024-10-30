@@ -77,6 +77,8 @@ public class Ejercicio1 {
         // Calcular el tiempo total de ejecución
         long totalExecutionTime = endTime - startTime;
         System.out.println("Tiempo total de ejecución: " + totalExecutionTime + " nanosegundos");
+        
+        entrada.close();
 
     }
 

@@ -119,7 +119,8 @@ public class Ejercicio3 {
 
         // Calcular y mostrar el tiempo total de ejecución
         long tiempoEjecucionTotal = tiempoFin - tiempoInicio;
-        System.out.println("Tiempo total de ejecución: " + tiempoEjecucionTotal + " ns");
+        System.out.println("Tiempo total de ejecución: " + tiempoEjecucionTotal + " nanosegundos");
+        scanner.close();
     }
 
 }

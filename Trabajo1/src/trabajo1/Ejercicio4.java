@@ -108,12 +108,13 @@ public class Ejercicio4 {
         arreglo.imprimirConMensaje("Arreglo modificado: ");
         System.out.println("Nuevo tamaño del arreglo: " + arreglo.getTamano());
 
-        scanner.close();
 
         // Finaliza el cronómetro y muestra el tiempo de ejecución
         long endTime = System.nanoTime();
         long duration = endTime - startTime;   
-        System.out.println("Tiempo de ejecución: " + duration + " ns");
+        System.out.println("Tiempo de ejecución: " + duration + " nanosegundos");
+        
+        scanner.close();
     }
 
     /**
