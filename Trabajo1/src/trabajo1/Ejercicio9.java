@@ -31,7 +31,7 @@ public class Ejercicio9 {
     public void imprimirMatriz() {
         for (int contadorFilas = 0; contadorFilas < filas; contadorFilas++) {
             for (int contadorColumnas = 0; contadorColumnas < columnas; contadorColumnas++) {
-                System.out.print(matriz[contadorFilas][contadorColumnas] + " ");
+                System.out.print(matriz[contadorFilas][contadorColumnas] + "\t");
             }
             System.out.println();
         }

@@ -1,11 +1,10 @@
 package trabajo1;
 
-
 import java.util.Random;
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class Ejercicio8 {
-
     private int[][] matriz;
     private int n;
 
@@ -36,80 +35,80 @@ public class Ejercicio8 {
         this.n = n;
     }
 
-    public int calcularDeterminante() { 
-        int[][] matrizCopia = new int[n][n];
+    public double calcularDeterminante() {
+        double[][] matrizCopia = new double[n][n];
         for (int fila = 0; fila < n; fila++) {
             for (int columna = 0; columna < n; columna++) {
                 matrizCopia[fila][columna] = matriz[fila][columna];
             }
         }
-        int determinante = 1;
-        // Procesar cada columna para realizar la eliminación del metodo Gauss
+
+        double determinante = 1.0;
         for (int columnaPivote = 0; columnaPivote < n; columnaPivote++) {
             int filaMaxima = columnaPivote;
-            // Encontrar la fila con el valor absoluto máximo en la columna actual (pivote)
             for (int filaActual = columnaPivote + 1; filaActual < n; filaActual++) {
                 if (Math.abs(matrizCopia[filaActual][columnaPivote]) > Math.abs(matrizCopia[filaMaxima][columnaPivote])) {
                     filaMaxima = filaActual;
                 }
             }
-            // Si el pivote no está en la fila actual, se intercambia filas para maximizar la precisión
+
             if (columnaPivote != filaMaxima) {
-                int[] filaTemporal = matrizCopia[columnaPivote];
+                double[] filaTemporal = matrizCopia[columnaPivote];
                 matrizCopia[columnaPivote] = matrizCopia[filaMaxima];
                 matrizCopia[filaMaxima] = filaTemporal;
                 determinante *= -1;
             }
-            // Si el elemento de pivote es cero, la matriz es singular y el determinante es cero
-            if (matrizCopia[columnaPivote][columnaPivote] == 0) {
-                return 0;
+
+            if (matrizCopia[columnaPivote][columnaPivote] == 0.0) {
+                return 0.0;
             }
-            // Realizar la eliminación de Gauss para crear ceros debajo del pivote
+
             for (int fila = columnaPivote + 1; fila < n; fila++) {
-                double factor = (double) matrizCopia[fila][columnaPivote] / matrizCopia[columnaPivote][columnaPivote];
+                double factor = matrizCopia[fila][columnaPivote] / matrizCopia[columnaPivote][columnaPivote];
                 for (int columna = columnaPivote; columna < n; columna++) {
                     matrizCopia[fila][columna] -= factor * matrizCopia[columnaPivote][columna];
                 }
             }
+
             determinante *= matrizCopia[columnaPivote][columnaPivote];
         }
-        return determinante;
+
+        // Redondear el determinante a 2 decimales 
+        DecimalFormat df = new DecimalFormat("#.##"); 
+        return Double.parseDouble(df.format(determinante));
     }
 
     public String imprimirMatriz() {
-        String resultado = "";
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                resultado += matriz[i][j] + "\t";
+        StringBuilder resultado = new StringBuilder();
+        for (int filas = 0; filas < n; filas++) {
+            for (int columnas = 0; columnas < n; columnas++) {
+                resultado.append(matriz[filas][columnas]).append("\t");
             }
-            resultado += "\n";
+            resultado.append("\n");
         }
-        return resultado;
+        return resultado.toString();
     }
-    
-    // Método para solicitar un número entero al usuario
+
     private static int solicitarEntero(Scanner scanner, String mensaje) {
         System.out.print(mensaje);
         return scanner.nextInt();
     }
-    
-    public static void main(String[] args) { 
-        // Código del ejercicio 8 
-        int determinante = 0;
-        System.out.println("\nEjecutando Ejercicio 9\n"); 
+
+    public static void main(String[] args) {
+        System.out.println("\nEjecutando Ejercicio 8\n");
         Scanner scanner = new Scanner(System.in);
-        int tamaño = solicitarEntero(scanner, "Ingrese el tamaño de la matriz cuadrática (n): ");        
-        
-        long tiemposTotales=0;
+        int tamaño = solicitarEntero(scanner, "Ingrese el tamaño de la matriz cuadrática (n): ");
         
         long startTimeTotal = System.nanoTime();
         Ejercicio8 matriz = new Ejercicio8(tamaño);
         System.out.println(matriz.imprimirMatriz());
-        determinante = matriz.calcularDeterminante();
-        System.out.println("El valor del determinante de la matriz es: " + determinante);
-        tiemposTotales = System.nanoTime() - startTimeTotal;
-        System.out.println("Tiempo ejecución= "+tiemposTotales+" nanosegundos");
         
+        double determinante = matriz.calcularDeterminante();
+        System.out.println("El valor del determinante de la matriz es: " + determinante);
+        
+        long tiemposTotales = System.nanoTime() - startTimeTotal;
+        System.out.println("Tiempo ejecución= " + tiemposTotales + " nanosegundos");
+
         scanner.close();
     }
 }
