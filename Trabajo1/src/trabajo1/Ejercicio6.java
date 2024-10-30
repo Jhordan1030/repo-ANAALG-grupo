@@ -4,6 +4,8 @@
  */
 package trabajo1;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Giuliana Espinoza
@@ -77,7 +79,14 @@ public class Ejercicio6 {
     public static void main(String[] args) { 
    
         System.out.println("\nEjecutando Ejercicio 6\n");
-       Ejercicio6 matrizEspiral = new Ejercicio6(5, 4); 
+         Scanner scannern = new Scanner(System.in);
+          Scanner scannerm = new Scanner(System.in);
+         System.out.println(" Ingrese n de la matriz: ");
+        int n=scannern.nextInt();
+        System.out.println("Ingrese m de la matriz:");
+         int m=scannerm.nextInt();
+         
+       Ejercicio6 matrizEspiral = new Ejercicio6(n,m); 
         medirTiempoEjecucion(() -> matrizEspiral.mostrarMatriz());
     }
 
