@@ -1,5 +1,9 @@
 package trabajo1;
+
+import java.util.Scanner;
+
 public class Ejercicio1 {
+
     int[] numeros;
 
     // Constructor que genera los números aleatorios
@@ -49,11 +53,31 @@ public class Ejercicio1 {
         }
         System.out.println();
     }
-    
-    public static void main(String[] args) { 
+
+    public static void main(String[] args) {
         // Código del ejercicio 1 
-        System.out.println("Ejecutando Ejercicio 1"); 
-        // Tu código aquí 
+        System.out.println("Ejecutando Ejercicio 1");
+        Scanner entrada = new Scanner(System.in);
+        System.out.print("Ingrese la cantidad de números aleatorios a generar:");
+        int n = entrada.nextInt();
+
+        // Medir el tiempo de inicio total
+        long startTime = System.nanoTime();
+
+        // Crear instancia de Ejercicio1 y ejecutar las operaciones
+        Ejercicio1 ejercicio = new Ejercicio1(n);
+        ejercicio.mostrar();
+
+        // Contar números primos
+        Ejercicio1.contarPrimos(ejercicio.numeros);
+
+        // Medir el tiempo de fin total
+        long endTime = System.nanoTime();
+
+        // Calcular el tiempo total de ejecución
+        long totalExecutionTime = endTime - startTime;
+        System.out.println("Tiempo total de ejecución: " + totalExecutionTime + " nanosegundos");
+
     }
-    
+
 }
