@@ -63,15 +63,15 @@ public class Ejercicio3 {
 
         // Si se encontró el número, buscar las posiciones adyacentes
         if (posicion != -1) {
-            int i = posicion;
-            while (i >= 0 && arreglo[i] == numeroBuscado) {
-                posiciones.add(i);
-                i--;
+            int cont = posicion;
+            while (cont >= 0 && arreglo[cont] == numeroBuscado) {
+                posiciones.add(cont);
+                cont--;
             }
-            i = posicion + 1;
-            while (i < arreglo.length && arreglo[i] == numeroBuscado) {
-                posiciones.add(i);
-                i++;
+            cont = posicion + 1;
+            while (cont < arreglo.length && arreglo[cont] == numeroBuscado) {
+                posiciones.add(cont);
+                cont++;
             }
             posiciones.sort(Integer::compareTo);
         }
