@@ -6,6 +6,7 @@ package trabajo1;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
@@ -85,10 +86,63 @@ public class Ejercicio4 {
     public static void main(String[] args) { 
     // Código del ejercicio 1 
         System.out.println("\nEjecutando Ejercicio 4\n");
-        // Tu código aquí
+        long startTime = System.nanoTime(); // Inicia el cronómetro
+
+        Scanner scanner = new Scanner(System.in);
+
+        // Paso 1: Crear el arreglo original
+        System.out.print("Ingrese el tamaño del arreglo original: ");
+        int tamano = scanner.nextInt();
+        if (tamano <= 0) {
+            System.out.println("El tamaño debe ser un número positivo.");
+            return;
+        }
+
+        Ejercicio4 arreglo = new    Ejercicio4(tamano);
+        arreglo.imprimirConMensaje("Arreglo original: ");
+
+        // Paso 2: Insertar nuevos datos
+        insertarNuevosDatos(arreglo, scanner);
+
+        // Imprimir arreglo modificado
+        arreglo.imprimirConMensaje("Arreglo modificado: ");
+        System.out.println("Nuevo tamaño del arreglo: " + arreglo.getTamano());
+
+        scanner.close();
+
+        // Finaliza el cronómetro y muestra el tiempo de ejecución
+        long endTime = System.nanoTime();
+        long duration = endTime - startTime;   
+        System.out.println("Tiempo de ejecución: " + duration + " ns");
+    }
+
+    /**
+     * Inserta nuevos valores en el arreglo en posiciones específicas dadas por el usuario.
+     * 
+     * @param arreglo El arreglo en el que se insertarán los nuevos valores.
+     * @param scanner Scanner para la entrada del usuario.
+     */
+    private static void insertarNuevosDatos(Ejercicio4 arreglo, Scanner scanner) {
+        System.out.print("Ingrese la cantidad de datos a insertar: ");
+        int cantidadInserciones = scanner.nextInt();
+
+        for (int i = 0; i < cantidadInserciones; i++) {
+            System.out.print("Ingrese el valor a insertar: ");
+            int valor = scanner.nextInt();
+            System.out.print("Ingrese la posición en la que desea insertarlo (0 a " + arreglo.getTamano() + "): ");
+            int posicion = scanner.nextInt();
+
+            if (posicion >= 0 && posicion <= arreglo.getTamano()) {
+                arreglo.insertarNumero(valor, posicion);
+            } else {
+                System.out.println("Posición inválida: " + posicion);
+            }
+        }
+    }
+        
+        
     }
     
-}
 
     
 

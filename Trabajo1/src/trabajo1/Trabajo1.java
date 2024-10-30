@@ -56,7 +56,7 @@ public class Trabajo1 {
             case 3:
                 Ejercicio3.main(null);
                 break;
-            /*case 4:
+            case 4:
                 Ejercicio4.main(null);
                 break;
             case 5:
@@ -64,7 +64,7 @@ public class Trabajo1 {
                 break;
             case 6:
                 Ejercicio6.main(null);
-                break;*/
+                break;
             case 7:
                 Ejercicio7.main(null);
                 break;

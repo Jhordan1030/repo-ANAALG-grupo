@@ -4,6 +4,8 @@
  */
 package trabajo1;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Giuliana Espinoza
@@ -89,13 +91,38 @@ public class Ejercicio5 {
     }
     
     public static void main(String[] args) { 
-    // Código del ejercicio 1 
+  
         System.out.println("\nEjecutando Ejercicio 5\n");
-        // Tu código aquí
+        medirTiempoEjecucion(() -> {
+            try (Scanner scanner = new Scanner(System.in)) {
+                System.out.print("Ingrese el tamaño de la matriz (n): ");
+                int n = scanner.nextInt();
+
+                Ejercicio5 matrizDiagonal = new Ejercicio5(n);
+                matrizDiagonal.generarDiagonales();
+                matrizDiagonal.mostrarMatriz();
+            }
+        });
+    }
+
+    /**
+     * Mide y muestra el tiempo de ejecución de una operación dada.
+     * @param operacion La operación cuya duración se va a medir.
+     */
+    private static void medirTiempoEjecucion(Runnable operacion) {
+        long tiempoInicio = System.nanoTime();
+        
+        operacion.run();
+        
+        long tiempoFin = System.nanoTime();
+        long duracionNanosegundos = tiempoFin - tiempoInicio;
+        
+        System.out.println("Tiempo de ejecución: " + duracionNanosegundos + " ns");
+    }
     }
     
     
-}
+
 
     
 

@@ -75,13 +75,29 @@ public class Ejercicio6 {
     }
     
     public static void main(String[] args) { 
-    // Código del ejercicio 1 
+   
         System.out.println("\nEjecutando Ejercicio 6\n");
-        // Tu código aquí
+       Ejercicio6 matrizEspiral = new Ejercicio6(5, 4); 
+        medirTiempoEjecucion(() -> matrizEspiral.mostrarMatriz());
+    }
+
+    /**
+     * Mide y muestra el tiempo de ejecución de una operación.
+     * @param operacion La operación a medir.
+     */
+    private static void medirTiempoEjecucion(Runnable operacion) {
+        long tiempoInicio = System.nanoTime();
+        
+        operacion.run();
+        
+        long tiempoFin = System.nanoTime();
+        long duracionNanosegundos = tiempoFin - tiempoInicio;
+        System.out.println("Tiempo de ejecución: " + duracionNanosegundos + " ns");
+    }
     }
     
     
-}
+
 
     
 
