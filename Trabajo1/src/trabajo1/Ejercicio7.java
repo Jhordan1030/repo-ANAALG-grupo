@@ -1,6 +1,7 @@
 package trabajo1;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Ejercicio7 {
 
@@ -97,7 +98,10 @@ public class Ejercicio7 {
     
     public static void main(String[] args) { 
         // Código del ejercicio 7
-        System.out.println("Ejecutando Ejercicio 7"); 
+        System.out.println("\nEjecutando Ejercicio 9\n"); 
+        Scanner scanner = new Scanner(System.in);
+        int filas = solicitarEntero(scanner, "Ingrese el número de filas (m): ");
+        int columnas = solicitarEntero(scanner, "Ingrese el número de columnas (n): ");
         Ejercicio7 matriz = new Ejercicio7(5);
         matriz.multiplicarMatrices();
         System.out.println(matriz.imprimirMatrices());
