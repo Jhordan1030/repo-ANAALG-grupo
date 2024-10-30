@@ -87,6 +87,14 @@ public class Ejercicio5 {
             System.out.println();
         }
     }
+    
+    public static void main(String[] args) { 
+    // Código del ejercicio 1 
+        System.out.println("\nEjecutando Ejercicio 5\n");
+        // Tu código aquí
+    }
+    
+    
 }
 
     
