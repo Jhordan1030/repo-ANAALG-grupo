@@ -19,30 +19,30 @@ public class Ejercicio7 {
         multiplicarMatrices();
     }
 
-    private void generarMatriz(int[][] matriz) {
+    private void generarMatriz(int[][] matriz) { // Genera la matriz con numeros aleatorios
         Random random = new Random();
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                matriz[i][j] = random.nextInt(20) + 1;
+        for (int filas = 0; filas < n; filas++) {
+            for (int columnas = 0; columnas < n; columnas++) {
+                matriz[filas][columnas] = random.nextInt(20) + 1;
             }
         }
     }
 
-    private void multiplicarMatrices() {
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                for (int k = 0; k < n; k++) {
-                    matrizC[i][j] += matrizA[i][k] * matrizB[k][j];
+    private void multiplicarMatrices() { // Realiza la multiplicacion de las dos matrices para generar la tercera matriz
+        for (int filas = 0; filas < n; filas++) {
+            for (int columnas = 0; columnas < n; columnas++) {
+                for (int variableAuxiliar = 0; variableAuxiliar < n; variableAuxiliar++) {
+                    matrizC[filas][columnas] += matrizA[filas][variableAuxiliar] * matrizB[variableAuxiliar][columnas];
                 }
             }
         }
     }
 
-    public String imprimirMatriz(int[][] matriz) {
+    public String imprimirMatriz(int[][] matriz) { // Muestra la matriz
         String resultado = "";
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                resultado += matriz[i][j] + "\t";
+        for (int filas = 0; filas < n; filas++) {
+            for (int columnas = 0; columnas < n; columnas++) {
+                resultado += matriz[filas][columnas] + "\t";
             }
             resultado += "\n";
         }

@@ -7,14 +7,13 @@ public class Ejercicio8 {
     private int[][] matriz;
     private int n;
 
-    // Constructor que inicializa el tamaño de la matriz y la genera aleatoriamente
     public Ejercicio8(int n) {
         this.n = n;
         matriz = new int[n][n];
         Random random = new Random();
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                matriz[i][j] = random.nextInt(10); // Números entre 0 y 9
+        for (int filas = 0; filas < n; filas++) {
+            for (int columnas = 0; columnas < n; columnas++) {
+                matriz[filas][columnas] = random.nextInt(20) + 1;
             }
         }
     }
@@ -35,49 +34,43 @@ public class Ejercicio8 {
         this.n = n;
     }
 
-    public int obtenerDeterminante() {
-        return calcularDeterminante(matriz, n);
-    }
-
-    public int calcularDeterminante(int[][] matriz, int tamaño) {
-        int[][] temp = new int[tamaño][tamaño];
-        for (int i = 0; i < tamaño; i++) {
-            for (int j = 0; j < tamaño; j++) {
-                temp[i][j] = matriz[i][j];
+    public int calcularDeterminante() {
+        int[][] matrizCopia = new int[n][n];
+        for (int fila = 0; fila < n; fila++) {
+            for (int columna = 0; columna < n; columna++) {
+                matrizCopia[fila][columna] = matriz[fila][columna];
             }
         }
         int determinante = 1;
-        for (int i = 0; i < tamaño; i++) {
-            int maxFila = i;
-            for (int k = i + 1; k < tamaño; k++) {
-                if (Math.abs(temp[k][i]) > Math.abs(temp[maxFila][i])) {
-                    maxFila = k;
+        // Procesar cada columna para realizar la eliminación de Gauss
+        for (int columnaPivote = 0; columnaPivote < n; columnaPivote++) {
+            int filaMaxima = columnaPivote;
+            // Encontrar la fila con el valor absoluto máximo en la columna actual (pivote)
+            for (int filaActual = columnaPivote + 1; filaActual < n; filaActual++) {
+                if (Math.abs(matrizCopia[filaActual][columnaPivote]) > Math.abs(matrizCopia[filaMaxima][columnaPivote])) {
+                    filaMaxima = filaActual;
                 }
             }
-
-            // Intercambiamos las filas si el pivote no está en la fila actual
-            if (i != maxFila) {
-                int[] filaTemp = temp[i];
-                temp[i] = temp[maxFila];
-                temp[maxFila] = filaTemp;
-                determinante *= -1; // Cambiamos el signo del determinante
+            // Si el pivote no está en la fila actual, se intercambia filas para maximizar la precisión
+            if (columnaPivote != filaMaxima) {
+                int[] filaTemporal = matrizCopia[columnaPivote];
+                matrizCopia[columnaPivote] = matrizCopia[filaMaxima];
+                matrizCopia[filaMaxima] = filaTemporal;
+                determinante *= -1;
             }
-
-            // Si el elemento de pivote es cero, el determinante es cero
-            if (temp[i][i] == 0) {
+            // Si el elemento de pivote es cero, la matriz es singular y el determinante es cero
+            if (matrizCopia[columnaPivote][columnaPivote] == 0) {
                 return 0;
             }
-
-            // Realizamos la eliminación de Gauss
-            for (int k = i + 1; k < tamaño; k++) {
-                double factor = (double) temp[k][i] / temp[i][i];
-                for (int j = i; j < tamaño; j++) {
-                    temp[k][j] -= factor * temp[i][j];
+            // Realizar la eliminación de Gauss para crear ceros debajo del pivote
+            for (int fila = columnaPivote + 1; fila < n; fila++) {
+                double factor = (double) matrizCopia[fila][columnaPivote] / matrizCopia[columnaPivote][columnaPivote];
+                for (int columna = columnaPivote; columna < n; columna++) {
+                    matrizCopia[fila][columna] -= factor * matrizCopia[columnaPivote][columna];
                 }
             }
-            determinante *= temp[i][i];
+            determinante *= matrizCopia[columnaPivote][columnaPivote];
         }
-
         return determinante;
     }
 
