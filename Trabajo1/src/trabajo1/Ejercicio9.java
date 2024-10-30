@@ -68,54 +68,42 @@ public class Ejercicio9 {
     }
 
     // Método para realizar mediciones de tiempo
-    private static void realizarMediciones(int filas, int columnas, int numMediciones, long[] tiemposSeleccion, long[] tiemposTotales) {
-        for (int contadorMediciones = 0; contadorMediciones < numMediciones; contadorMediciones++) {
+    private static void realizarMediciones(int filas, int columnas, long tiemposSeleccion, long tiemposTotales) {
+        
             Ejercicio9 matriz = new Ejercicio9(filas, columnas);
-            System.out.println("Matriz generada " + (contadorMediciones + 1) + ":");
+            System.out.println("Matriz generada :");
             matriz.imprimirMatriz();
 
             long startTimeTotal = System.nanoTime();
-            medirOrdenamientoSeleccion(matriz, tiemposSeleccion, contadorMediciones);
-            tiemposTotales[contadorMediciones] = System.nanoTime() - startTimeTotal;
-        }
+            medirOrdenamientoSeleccion(matriz, tiemposSeleccion);
+            tiemposTotales = System.nanoTime() - startTimeTotal;
     }
 
     // Método para medir el tiempo de ordenamiento por selección
-    private static void medirOrdenamientoSeleccion(Ejercicio9 matriz, long[] tiemposSeleccion, int index) {
+    private static void medirOrdenamientoSeleccion(Ejercicio9 matriz, long tiemposSeleccion) {
         long startTime = System.nanoTime();
         matriz.ordenarColumnas();
-        tiemposSeleccion[index] = System.nanoTime() - startTime;
+        tiemposSeleccion = System.nanoTime() - startTime;
 
         System.out.println("Ordenado con método de selección:");
         matriz.imprimirMatriz();
     }
 
     // Método para mostrar los resultados de las mediciones
-    private static void mostrarResultados(long[] tiemposSeleccion, long[] tiemposTotales) {
+    private static void mostrarResultados(long tiemposSeleccion, long tiemposTotales) {
         mostrarTiempos("método de selección", tiemposSeleccion);
         mostrarTiempos("total", tiemposTotales);
-        System.out.println("Promedios de tiempos de ejecución:");
-        System.out.println("Método de selección: " + calcularPromedio(tiemposSeleccion) + " nanosegundos");
-        System.out.println("Total: " + calcularPromedio(tiemposTotales) + " nanosegundos");
+        
     }
 
     // Método para mostrar los tiempos de ejecución
-    private static void mostrarTiempos(String descripcion, long[] tiempos) {
+    private static void mostrarTiempos(String descripcion, long tiempos) {
         System.out.println("Tiempos de ejecución del " + descripcion + " (nanosegundos):");
-        for (long tiempo : tiempos) {
-            System.out.println(tiempo);
-        }
+        
+            System.out.println(tiempos);
     }
 
-    // Método para calcular el promedio de los tiempos de ejecución
-    private static long calcularPromedio(long[] tiempos) {
-        long suma = 0;
-        for (long tiempo : tiempos) {
-            suma += tiempo;
-        }
-        return suma / tiempos.length;
-    }
-
+    
     // Método principal para ejecutar el programa
     public static void main(String[] args) {
         // Código del ejercicio 9 
@@ -123,11 +111,11 @@ public class Ejercicio9 {
         Scanner scanner = new Scanner(System.in);
         int filas = solicitarEntero(scanner, "Ingrese el número de filas (m): ");
         int columnas = solicitarEntero(scanner, "Ingrese el número de columnas (n): ");
-        int numMediciones = 1;
-        long[] tiemposSeleccion = new long[numMediciones];
-        long[] tiemposTotales = new long[numMediciones];
+        
+        long tiemposSeleccion = 0;
+        long tiemposTotales = 0;
 
-        realizarMediciones(filas, columnas, numMediciones, tiemposSeleccion, tiemposTotales);
+        realizarMediciones(filas, columnas, tiemposSeleccion, tiemposTotales);
         mostrarResultados(tiemposSeleccion, tiemposTotales);
 
         scanner.close();

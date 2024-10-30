@@ -112,10 +112,10 @@ public class Ejercicio7 {
         int tamaño = solicitarEntero(scanner, "Ingrese el tamaño de la matriz cuadrática (n): ");        
         
         long tiemposTotales=0;
+        long startTimeTotal = System.nanoTime();
         Ejercicio7 matriz = new Ejercicio7(tamaño);
         matriz.multiplicarMatrices();
         System.out.println(matriz.imprimirMatrices());
-        long startTimeTotal = System.nanoTime();
         tiemposTotales = System.nanoTime() - startTimeTotal;
         System.out.println("Tiempo ejecución= "+tiemposTotales+" nanosegundos");
         

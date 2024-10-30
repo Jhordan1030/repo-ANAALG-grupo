@@ -101,11 +101,12 @@ public class Ejercicio8 {
         int tamaño = solicitarEntero(scanner, "Ingrese el tamaño de la matriz cuadrática (n): ");        
         
         long tiemposTotales=0;
+        
+        long startTimeTotal = System.nanoTime();
         Ejercicio8 matriz = new Ejercicio8(tamaño);
         System.out.println(matriz.imprimirMatriz());
         determinante = matriz.calcularDeterminante();
         System.out.println("El valor del determinante de la matriz es: " + determinante);
-        long startTimeTotal = System.nanoTime();
         tiemposTotales = System.nanoTime() - startTimeTotal;
         System.out.println("Tiempo ejecución= "+tiemposTotales+" nanosegundos");
         

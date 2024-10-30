@@ -86,6 +86,8 @@ public class Ejercicio3 {
         // Solicitar el tamaño del arreglo
         System.out.print("Ingrese la cantidad de números a generar: ");
         int n = scanner.nextInt();
+        
+        long tiempoInicio = System.nanoTime();
 
         // Crear instancia de la clase Ejercicio3 y generar el arreglo
         Ejercicio3 ejercicio = new Ejercicio3(n);
@@ -97,7 +99,6 @@ public class Ejercicio3 {
         // Solicitar el número a buscar
         System.out.print("Ingrese el número a buscar: ");
         int numeroBuscado = scanner.nextInt();
-        long tiempoInicio = System.nanoTime();
         // Búsqueda secuencial
         ArrayList<Integer> posicionesSecuencial = ejercicio.buscarSecuencial(numeroBuscado);
         if (!posicionesSecuencial.isEmpty()) {
