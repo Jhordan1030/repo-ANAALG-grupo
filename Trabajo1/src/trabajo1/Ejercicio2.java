@@ -2,6 +2,7 @@ package trabajo1;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Scanner;
 
 public class Ejercicio2 {
 
@@ -68,8 +69,21 @@ public class Ejercicio2 {
     
     public static void main(String[] args) { 
         // Código del ejercicio 1 
-        System.out.println("Ejecutando Ejercicio 1"); 
-        // Tu código aquí 
+        System.out.println("Ejecutando Ejercicio 2"); 
+        Scanner entrada = new Scanner(System.in);
+        System.out.print("Ingrese el valor de números:");
+        int n = entrada.nextInt();
+
+        long tiempoInicio = System.nanoTime();
+
+        Ejercicio2 numeros = new Ejercicio2(n);
+        numeros.mostrar();
+        System.out.println("Elementos de numeros que están en numeros2: " + numeros.elementosEnNumeros2());
+        System.out.println("Elementos de numeros2 que están en numeros: " + numeros.elementosEnNumeros());
+        long tiempoFin = System.nanoTime();
+        long tiempoEjecucion = tiempoFin - tiempoInicio;
+        System.out.println("Tiempo de ejecución: " + tiempoEjecucion + " ns");
+
     }
     
 }
