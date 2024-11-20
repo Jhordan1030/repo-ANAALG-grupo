@@ -9,17 +9,17 @@ public class Ejercicio1 {
     public static int[] generarNumerosAleatorios(int n) {
         int[] arreglo = new int[n];
         Random rand = new Random();
-        for (int i = 0; i < n; i++) {
-            arreglo[i] = rand.nextInt(100);  // Genera números aleatorios entre 0 y 99
+        for (int cont = 0; cont < n; cont++) {
+            arreglo[cont] = rand.nextInt(100);  // Genera números aleatorios entre 0 y 99
         }
         return arreglo;
     }
 
     // Búsqueda secuencial
     public static int busquedaSecuencial(int[] arreglo, int elemento) {
-        for (int i = 0; i < arreglo.length; i++) {
-            if (arreglo[i] == elemento) {
-                return i;  // Retorna la posición si encuentra el elemento
+        for (int cont = 0; cont < arreglo.length; cont++) {
+            if (arreglo[cont] == elemento) {
+                return cont;  // Retorna la posición si encuentra el elemento
             }
         }
         return -1;  // Retorna -1 si no se encuentra el elemento
