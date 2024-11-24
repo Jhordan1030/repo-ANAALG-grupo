@@ -72,6 +72,8 @@ public class Ejercico3 {
         System.out.print("Ingrese el número de columnas (m): ");
         int numeroColumnas = scanner.nextInt();
 
+        // Medir el tiempo de inicio total
+        long startTime = System.nanoTime();
         // Crear una instancia de MatrizDiagonales con las dimensiones ingresadas
         Ejercico3 matriz = new Ejercico3(numeroFilas, numeroColumnas);
 
@@ -81,7 +83,10 @@ public class Ejercico3 {
         // Imprimir la matriz generada
         matriz.imprimirMatriz();
 
-        // Cerrar el Scanner
-        scanner.close();
-    }
+        long endTime = System.nanoTime();
+
+        // Calcular el tiempo total de ejecución
+        long totalExecutionTime = endTime - startTime;
+        System.out.println("Tiempo total de ejecución: " + totalExecutionTime + " nanosegundos");
+        
 }
