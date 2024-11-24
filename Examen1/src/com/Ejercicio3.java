@@ -2,7 +2,7 @@ package com;
 
 import java.util.Scanner;
 
-public class Ejercico3 {
+public class Ejercicio3 {
     // Atributos de la clase
     private int filas;
     private int columnas;
@@ -14,7 +14,7 @@ public class Ejercico3 {
      * @param filas    Número de filas de la matriz.
      * @param columnas Número de columnas de la matriz.
      */
-    public Ejercico3(int filas, int columnas) {
+    public Ejercicio3(int filas, int columnas) {
         this.filas = filas;
         this.columnas = columnas;
         this.matriz = new int[filas][columnas];
@@ -75,7 +75,7 @@ public class Ejercico3 {
         // Medir el tiempo de inicio total
         long startTime = System.nanoTime();
         // Crear una instancia de MatrizDiagonales con las dimensiones ingresadas
-        Ejercico3 matriz = new Ejercico3(numeroFilas, numeroColumnas);
+        Ejercicio3 matriz = new Ejercicio3(numeroFilas, numeroColumnas);
 
         // Llenar la matriz siguiendo el patrón de diagonales
         matriz.llenarMatriz();

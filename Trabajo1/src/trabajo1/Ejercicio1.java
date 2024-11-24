@@ -11,6 +11,7 @@ public class Ejercicio1 {
         this.numeros = new int[n];
         generarNumerosAleatorios();
     }
+    
 
     // Función para verificar si un número es primo
     private static boolean esPrimo(int num) {
