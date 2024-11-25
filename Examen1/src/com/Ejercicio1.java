@@ -49,10 +49,11 @@ public class Ejercicio1 {
         System.out.print("Ingrese el tamaño del arreglo: ");
         int n = scanner.nextInt();
 
-        // Medir el tiempo de inicio total
-        long startTime = System.nanoTime();
+        
 
 
+        // Generar el arreglo con números aleatorios
+        int[] arreglo = Ejercicio1.generarNumerosAleatorios(n);
 
         // Mostrar el arreglo generado
         System.out.println("Arreglo generado: " + Arrays.toString(arreglo));
