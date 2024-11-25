@@ -1,5 +1,7 @@
 package com;
 
+import java.util.Scanner;
+
 public class Ejercicio4 {
     
     public int [][] matriz;
@@ -27,13 +29,6 @@ public class Ejercicio4 {
         }
     }
     
-    public long calcularTiempoEjecucion(int p) {
-        long inicio = System.nanoTime();
-        matrizRombo(p);
-        long fin = System.nanoTime();
-        return fin - inicio;
-    }
-    
     public String imprimirMatriz(){
         String resultado = "";
         for (int filas = 0; filas < matriz.length; filas++) {
@@ -44,4 +39,15 @@ public class Ejercicio4 {
         } 
         return resultado;
     }   
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner (System.in);
+        System.out.print("Ingrese el tamaño de la matriz: ");
+        int n = scanner.nextInt();  // n es el tamaño de la matriz
+        Ejercicio4 matriz = new Ejercicio4(n);
+        System.out.println("Ingrese el numero de los primeros elementos que se mostraran en la matriz");
+        int p = scanner.nextInt();
+        matriz.matrizRombo(p);
+        System.out.println(matriz.imprimirMatriz());
+    }
 }
