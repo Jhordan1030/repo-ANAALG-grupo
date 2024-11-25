@@ -53,7 +53,7 @@ private static void displayMenu() {
                 Ejercicio3.main(null);
                 break;
             case 4:
-                //Ejercicio4.main(null);
+                Ejercicio4.main(null);
                 break;
             case 5:
                 Ejercicio5.main(null);

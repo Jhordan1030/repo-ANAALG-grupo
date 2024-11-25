@@ -56,7 +56,7 @@ public class Ejercicio1 {
         int[] arreglo = Ejercicio1.generarNumerosAleatorios(n);
 
         // Mostrar el arreglo generado
-        System.out.println("Arreglo generado: " + Arrays.toString(arreglo));
+        System.out.println("Arreglo ge1nerado: " + Arrays.toString(arreglo));
 
         // Solicitar el elemento a buscar
         System.out.print("Ingrese el número que desea buscar: ");
