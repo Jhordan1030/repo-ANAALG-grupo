@@ -18,14 +18,14 @@ public class Ejercicio2 {
 
 
     // Método para imprimir la matriz
-    public void imprimirMatriz() {
-        for (int[] fila : matriz) {
-            for (int elemento : fila) {
-                System.out.print(elemento + "\t");
-            }
-            System.out.println();
+public void imprimirMatriz() {
+    for (int i = 0; i < matriz.length; i++) { 
+        for (int j = 0; j < matriz[i].length; j++) { 
+            System.out.print(matriz[i][j] + "\t");
         }
+        System.out.println(); 
     }
+}
 
     // Método para ordenar una fila usando burbuja mejorada
     public void ordenarFila(int fila) {
