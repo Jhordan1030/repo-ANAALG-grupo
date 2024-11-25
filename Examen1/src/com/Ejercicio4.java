@@ -29,6 +29,8 @@ public class Ejercicio4 {
         }
     }
 
+    
+    
     public String imprimirMatriz() {
         StringBuilder resultado = new StringBuilder();
         for (int filas = 0; filas < matriz.length; filas++) {

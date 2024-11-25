@@ -3,6 +3,7 @@ package com;
 import java.util.Scanner;
 
 public class Ejercicio3 {
+
     // Atributos de la clase
     private int filas;
     private int columnas;
@@ -11,7 +12,7 @@ public class Ejercicio3 {
     /**
      * Constructor para inicializar la matriz con las dimensiones especificadas.
      *
-     * @param filas    Número de filas de la matriz.
+     * @param filas Número de filas de la matriz.
      * @param columnas Número de columnas de la matriz.
      */
     public Ejercicio3(int filas, int columnas) {
@@ -21,8 +22,8 @@ public class Ejercicio3 {
     }
 
     /**
-     * Método para llenar la matriz siguiendo el patrón de diagonales.
-     * Los números se incrementan secuencialmente, comenzando desde 1.
+     * Método para llenar la matriz siguiendo el patrón de diagonales. Los
+     * números se incrementan secuencialmente, comenzando desde 1.
      */
     public void llenarMatriz() {
         int numero = 1;
@@ -52,9 +53,9 @@ public class Ejercicio3 {
      */
     public void imprimirMatriz() {
         System.out.println("Matriz resultante:");
-        for (int[] fila : matriz) {
-            for (int elemento : fila) {
-                System.out.print(elemento + "\t");
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.printf("%4d", matriz[i][j]);
             }
             System.out.println();
         }
