@@ -100,19 +100,13 @@ public class Ejercicio5 {
         } while (numeroOrden % 2 == 0); 
         int tamanioCirculo = (numeroOrden + 1) / 2;
         if (tamanioCirculo % 2 != 0) {
-            
-            long startTime = System.nanoTime();
-
+                      
             Ejercicio5 circulo = new Ejercicio5(numeroOrden);
-
-            long endTime = System.nanoTime();
-            long executionTime = endTime - startTime;
 
             circulo.generarCirculo(numeroOrden);
             circulo.llenarCirculo();
             circulo.imprimirCirculo();
-
-            System.out.println("Tiempo de ejecución: " + executionTime + " nanosegundos");
+           
             scanner.close();
         } else {
             System.out.print("Por favor! Ingrese un valor valido para el círculo mágico.\n");
