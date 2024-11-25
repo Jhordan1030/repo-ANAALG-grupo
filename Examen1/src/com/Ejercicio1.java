@@ -53,8 +53,6 @@ public class Ejercicio1 {
         long startTime = System.nanoTime();
 
 
-        // Generar el arreglo con números aleatorios
-        int[] arreglo = Ejercicio1.generarNumerosAleatorios(n);
 
         // Mostrar el arreglo generado
         System.out.println("Arreglo generado: " + Arrays.toString(arreglo));
@@ -83,10 +81,6 @@ public class Ejercicio1 {
             System.out.println("Elemento no encontrado (búsqueda binaria).");
         }
 
-        long endTime = System.nanoTime();
-
-        // Calcular el tiempo total de ejecución
-        long totalExecutionTime = endTime - startTime;
-        System.out.println("Tiempo total de ejecución: " + totalExecutionTime + " nanosegundos");
+        
     }
 }

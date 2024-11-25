@@ -88,8 +88,7 @@ public class Ejercicio2 {
         System.out.print("¿Desea ordenar una fila o columna? (1: fila, 2: columna): ");
         int opcion = scanner.nextInt();
 
-        // Medir el tiempo de inicio total
-        long startTime = System.nanoTime();
+        
 
         if (opcion == 1) {
             // Ordenar fila
@@ -118,8 +117,6 @@ public class Ejercicio2 {
         }
         long endTime = System.nanoTime();
 
-        // Calcular el tiempo total de ejecución
-        long totalExecutionTime = endTime - startTime;
-        System.out.println("Tiempo total de ejecución: " + totalExecutionTime + " nanosegundos");
+       
     }
 }
