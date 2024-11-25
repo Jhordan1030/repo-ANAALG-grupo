@@ -9,12 +9,13 @@ public class Ejercicio2 {
     public Ejercicio2(int m, int n) {
         matriz = new int[m][n];
         Random random = new Random();
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                matriz[i][j] = random.nextInt(100); // Números aleatorios entre 0 y 99
+        for (int fila = 0; fila < m; fila++) {
+            for (int columna = 0; columna < n; columna++) {
+                matriz[fila][columna] = random.nextInt(100); // Números aleatorios entre 0 y 99
             }
         }
     }
+
 
     // Método para imprimir la matriz
     public void imprimirMatriz() {
@@ -29,38 +30,38 @@ public class Ejercicio2 {
     // Método para ordenar una fila usando burbuja mejorada
     public void ordenarFila(int fila) {
         boolean intercambio;
-        int n = matriz[fila].length;
+        int longitud = matriz[fila].length;
         do {
             intercambio = false;
-            for (int i = 0; i < n - 1; i++) {
-                if (matriz[fila][i] > matriz[fila][i + 1]) {
+            for (int columna = 0; columna < longitud - 1; columna++) {
+                if (matriz[fila][columna] > matriz[fila][columna + 1]) {
                     // Intercambiar
-                    int temp = matriz[fila][i];
-                    matriz[fila][i] = matriz[fila][i + 1];
-                    matriz[fila][i + 1] = temp;
+                    int temp = matriz[fila][columna];
+                    matriz[fila][columna] = matriz[fila][columna + 1];
+                    matriz[fila][columna + 1] = temp;
                     intercambio = true;
                 }
             }
-            n--; // Reducir el rango de comparación
+            longitud--; // Reducir el rango de comparación
         } while (intercambio);
     }
 
     // Método para ordenar una columna usando burbuja mejorada
     public void ordenarColumna(int columna) {
         boolean intercambio;
-        int m = matriz.length;
+        int filas = matriz.length;
         do {
             intercambio = false;
-            for (int i = 0; i < m - 1; i++) {
-                if (matriz[i][columna] > matriz[i + 1][columna]) {
+            for (int fila = 0; fila < filas - 1; fila++) {
+                if (matriz[fila][columna] > matriz[fila + 1][columna]) {
                     // Intercambiar
-                    int temp = matriz[i][columna];
-                    matriz[i][columna] = matriz[i + 1][columna];
-                    matriz[i + 1][columna] = temp;
+                    int temp = matriz[fila][columna];
+                    matriz[fila][columna] = matriz[fila + 1][columna];
+                    matriz[fila + 1][columna] = temp;
                     intercambio = true;
                 }
             }
-            m--; // Reducir el rango de comparación
+            filas--; // Reducir el rango de comparación
         } while (intercambio);
     }
 
@@ -115,8 +116,6 @@ public class Ejercicio2 {
         } else {
             System.out.println("Opción inválida.");
         }
-        long endTime = System.nanoTime();
-
        
     }
 }
