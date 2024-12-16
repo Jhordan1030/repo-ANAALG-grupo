@@ -11,18 +11,20 @@ def valor_mayor(matriz):
 
 
 # Algoritmo recursivo
-def valor_mayor_recursivo(matriz, i=0, mayor_actual=None):
-    if i == len(matriz):
+def valor_mayor_recursivo(matriz, i=None, mayor_actual=None):
+    # Nueva condición: Si la matriz está vacía, retornar 0
+    if not matriz or all(len(fila) == 0 for fila in matriz):
+        return 0
+    if i is None:
+        i = len(matriz) - 1
+    if i < 0:
         return mayor_actual
-
     if mayor_actual is None:
-        mayor_actual = matriz[0][0]
-
+        mayor_actual = matriz[i][0]
     for valor in matriz[i]:
         if valor > mayor_actual:
             mayor_actual = valor
-            
-    return valor_mayor_recursivo(matriz, i + 1, mayor_actual)
+    return valor_mayor_recursivo(matriz, i - 1, mayor_actual)
 
 
 def llenado(matriz):

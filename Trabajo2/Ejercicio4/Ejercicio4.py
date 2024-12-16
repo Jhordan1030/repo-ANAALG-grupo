@@ -10,15 +10,17 @@ def suma_filas(matriz):
 
 
 # Algoritmo recursivo
-def suma_filas_recursivo(matriz, i=0):
-    if i == len(matriz):
+def suma_filas_recursivo(matriz, i=None):
+    # Caso base: Si la matriz está vacía, retornar [0]
+    if not matriz:
+        return [0]
+    if i is None:
+        i = len(matriz) - 1
+    if i < 0:
         return []
+    suma_actual = sum(matriz[i])
+    return suma_filas_recursivo(matriz, i - 1) + [suma_actual]
 
-    suma_actual = 0
-    for valor in matriz[i]:
-        suma_actual += valor
-
-    return [suma_actual] + suma_filas_recursivo(matriz, i + 1)
 
 
 def llenado(matriz):
