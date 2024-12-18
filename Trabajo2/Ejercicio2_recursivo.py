@@ -14,7 +14,7 @@ def suma_digitos(numero):
 # Función recursiva para procesar el arreglo A de manera decremental
 def sumar_digitos_recursivo(arreglo, index=None):
     if index is None:
-        index = len(arreglo) - 1  # Inicializar el índice como el último elemento
+        index = len(arreglo) - 1  
 
     if index < 0:
         return []
@@ -32,5 +32,5 @@ def main():
     arreglo_b_recursivo = sumar_digitos_recursivo(arreglo_a)
     print(f"Arreglo B (suma de dígitos, recursivo): {arreglo_b_recursivo}")
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
